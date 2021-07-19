@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Like Ratio",
+  "version": "0.1",
+  "author": "Rocco Panacci",
+  "homepage_url": "http://roccopanacci.com",
+  "description": "Displays the likes on a YouTube video as a percentage",
+  "action": {
+    "default_icon": {              
+      "16": "img/youtube-like-ratio-16.png",   
+      "24": "img/youtube-like-ratio-24.png",   
+      "32": "img/youtube-like-ratio-32.png"
+    },
+    "default_title": "YouTube Like Ratio"
+  },
+  "icons": { 
+    "16": "img/youtube-like-ratio-16.png",
+    "48": "img/youtube-like-ratio-48.png",
+    "128": "img/youtube-like-ratio-128.png" 
+  },
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "http://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*","http://*.youtube.com/*"],
+      "js": ["youtube-like-ratio.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
